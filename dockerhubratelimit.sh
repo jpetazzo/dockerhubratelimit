@@ -17,7 +17,7 @@ view_ratelimit() {
 }
 
 drain_ratelimit() {
-  for i in $(seq 3); do
+  for i in $(seq 100); do
     echo ---
     curl -f -s -H "$AUTH" "$URL" -o /dev/null --dump-header - | grep ratelimit
   done
